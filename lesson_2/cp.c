@@ -27,8 +27,8 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
-	openFlags = O_CREAT | O_WRONLY | O_TRUNC;
-	filePerms = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP;
+	openFlags = O_CREAT | O_WRONLY | O_TRUNC; // creat | write only | delete if exist
+	filePerms = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP; // read for user | wrte for user | read for grups | write for grups
 	outputFd = open(argv[2], openFlags, filePerms);
 	if (outputFd == -1) {
 		fprintf(stderr, "error opening file %s\n", argv[2]);

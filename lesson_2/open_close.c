@@ -10,7 +10,7 @@ int main (int argc, char ** argv)
 {
 	int fd;
 	mode_t mode = S_IRUSR | S_IWUSR;
-	int flags = O_WRONLY | O_CREAT | O_EXCL;
+	int flags = O_WRONLY | O_CREAT | O_EXCL; // Throw an error if file exists when using O_CREAT
 	if (argc < 2)
 	{
 		fprintf (stderr, "openclose: Too few arguments\n");
